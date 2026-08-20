@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Import data
+const portfolioData = await import("../data/portfolio.json");
+
+const {
+    name,
+    title,
+    description,
+    experience,
+    education,
+    projects,
+    contact,
+    social,
+} = portfolioData.default;
+---
+
+<Layout>
+    {/* Hero Section */}
+    <section class="mb-20">
+        <div class="flex flex-col md:flex-row items-start justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="hero-text font-bold mb-4">
+                    hi, i'm <span class="text-primary">{name}</span>!
+                </h1>
+                <div set:html={description} class="text-xl mb-6 [&_p]:mb-8" />
+            </div>
+            <div class="md:w-1/2 md:flex justify-end hidden items-start h-full">
+                <img
+                    class="border-2 border-primary rounded-full h-64 w-64 m-0"
+                    src="/img/headshot.webp"
+                />
+            </div>
+        </div>
+    </section>
+</Layout>

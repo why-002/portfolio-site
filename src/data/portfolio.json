@@ -1,0 +1,62 @@
+{
+  "name": "wyatt",
+  "title": "Software Developer",
+  "description": "<p>I'm a software developer based in the Twin Cities area with a background spanning full-stack development, cloud infrastructure, and distributed systems. </p><p>My educational background is primarily in high-performance data infastructure, including some database research at the University of Minnesota.</p><p>Professionally, I got my start building internal business applications from the ground up. Most recently, my focus has been around cultivating an integrated engineering application ecosystem, streamlining operations and saving time for both designers and management.</p><p>Outside of work, I still like digging into low-level performance work on data systems for fun, most recently following the LSM implementation found at <a href='https://github.com/skyzh/mini-lsm' class='text-primary link-highlight'>Mini-LSM<a/>.",
+  "experience": [
+    {
+      "company": "FORCE America",
+      "url": "https://forceamerica.com",
+      "position": "Software Developer",
+      "period": "September 2024 – Present",
+      "description": "Full-stack role centered on modernizing and consolidating internal systems that had grown fragmented over time — retiring aging, one-off tools in favor of integrated, scalable solutions. My focus has increasingly shifted from individual builds to system-level thinking: owning architecture and integration decisions for larger initiatives, with an eye toward building things that hold up as the business scales rather than need replacing again in a few years."
+    },
+    {
+      "company": "IDeaS Revenue Solutions",
+      "url": "https://ideas.com",
+      "position": "Software Developer Intern",
+      "period": "May 2024 – August 2024",
+      "description": "Infrastructure and cloud-focused internship centered on AWS and distributed systems reliability. My work spanned cost optimization, infrastructure-as-code, autoscaling design, and debugging production issues across distributed services."
+    },
+    {
+      "company": "FORCE America",
+      "url": "https://forceamerica.com",
+      "position": "Junior Software Developer",
+      "period": "June 2023 – March 2024",
+      "description": "My first professional development role, focused on building internal business applications end-to-end — from requirements through deployment — with an emphasis on automating manual processes and giving teams tools that actually fit how they work."
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Minnesota - Twin Cities",
+      "degree": "Bachelor of Science in Computer Science",
+      "period": "December 2024",
+      "gpa": "3.7/4.0",
+      "courses": ["Architecture and Implementation of Database Management Systems", "Advanced Database Systems (Database Research)", "Distributed Systems"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Seafoam, KV Store",
+      "description": "Built a Raft-based distributed key-value store in Rust with lockless reads and a gRPC API, enabling linear read scalability across cores.",
+      "technologies": ["Rust", "gRPC", "Raft Consensus Algorithm"],
+      "url": "https://github.com/why-002/seafoam"
+    }
+  ],
+  "contact": {
+    "email": "wyattrasmussen002@gmail.com",
+    "phone": "",
+    "location": "Savage, MN"
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/why-002",
+      "display": "/why-002"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/wyatt-ras",
+      "display": "/in/wyatt-ras"
+    }
+  ]
+}

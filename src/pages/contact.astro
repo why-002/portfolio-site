@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+
+const portfolioData = await import("../data/portfolio.json");
+
+const { social, contact } = portfolioData.default;
+
+// Map a social platform "name" to an icon + label, with sensible fallbacks.
+const platform: Record<string, { icon: string; label: string }> = {
+    github: { icon: "github", label: "GitHub" },
+    linkedin: { icon: "linkedin", label: "LinkedIn" },
+};
+
+// Build the list of direct contact methods (only what's actually provided).
+const emailHref = contact.email ? `mailto:${contact.email}` : null;
+const phoneHref = contact.phone ? `tel:${contact.phone.replace(/[^\d+]/g, "")}` : null;
+const locationHref = contact.location
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.location)}`
+    : null;
+---
+
+<Layout>
+     <section id="contact" class="mb-16">
+         <h2 class="text-5xl font-bold mb-8 text-primary">Contact</h2>
+         <p class="text-xl mb-12 max-w-2xl opacity-80">
+            Have a project in mind, a question, or just want to say hello?
+            I'm always up for a conversation — pick whatever's easiest for you.
+         </p>
+
+         <div class="grid gap-12 md:grid-cols-2">
+             {/* Direct contact */}
+             <div>
+                 <h3 class="text-sm font-semibold uppercase tracking-wider opacity-60 mb-6">
+                    Reach out
+                 </h3>
+
+                 <ul class="space-y-4">
+                     {
+                       emailHref ? (
+                         <li class="flex items-center gap-3">
+                           <Icon name="mail" class="w-5 h-5 text-primary" />
+                           <a
+                              href={emailHref}
+                              class="link-highlight text-lg"
+                           >
+                              {contact.email}
+                           </a>
+                         </li>
+                        ) : (
+                         ""
+                        )
+                     }
+
+                     {
+                       phoneHref ? (
+                         <li class="flex items-center gap-3">
+                           <Icon name="phone" class="w-5 h-5 text-primary" />
+                           <a href={phoneHref} class="link-highlight text-lg">
+                              {contact.phone}
+                           </a>
+                         </li>
+                        ) : (
+                         ""
+                        )
+                     }
+
+                     {
+                       locationHref ? (
+                         <li class="flex items-center gap-3">
+                           <Icon name="map-pin" class="w-5 h-5 text-primary" />
+                           <a
+                              href={locationHref}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="link-highlight text-lg"
+                           >
+                              {contact.location}
+                           </a>
+                         </li>
+                        ) : (
+                         ""
+                        )
+                     }
+                 </ul>
+             </div>
+
+             {/* Social links */}
+             <div>
+                 <h3 class="text-sm font-semibold uppercase tracking-wider opacity-60 mb-6">
+                    Find me online
+                 </h3>
+
+                 <ul class="flex flex-wrap gap-x-6 gap-y-4">
+                     {
+                       social.map((item, index) => {
+                            const meta = platform[item.name.toLowerCase()] ?? {
+                                icon: "external",
+                                label: item.name,
+                            };
+                            return (
+                                 <li key={index}>
+                                     <a
+                                        href={item.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="link-highlight text-lg inline-flex items-center gap-2"
+                                     >
+                                         <Icon name={meta.icon} class="w-5 h-5" />
+                                         {meta.label}
+                                     </a>
+                                 </li>
+                             );
+                        })
+                     }
+                 </ul>
+             </div>
+         </div>
+     </section>
+</Layout>

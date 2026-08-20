@@ -1,0 +1,46 @@
+---
+import Nav from "../components/Nav.astro";
+// Import data
+const portfolioData = await import("../data/portfolio.json");
+
+const {
+    name,
+    title,
+    description,
+    experience,
+    education,
+    projects,
+    contact,
+    social,
+} = portfolioData.default;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{name} - Portfolio</title>
+        <meta name="description" content={description} />
+        <link rel="stylesheet" href="/css/main.css" /></head
+    >
+</html>
+<body class="min-h-screen bg-base-200">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <Nav />
+
+        <main>
+            <slot />
+        </main>
+
+        {/* Footer */}
+        <footer class="text-center pt-8 border-t border-primary mt-12">
+            <p class="text-gray-600">
+                Portfolio template made by Wyatt Rasmussen | View on <a
+                    href="https://github.com/why-002/portfolio-site"
+                    class="text-primary link-highlight">Github</a
+                >
+            </p>
+        </footer>
+    </div>
+</body>

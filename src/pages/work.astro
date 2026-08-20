@@ -1,0 +1,72 @@
+---
+import type { Component } from "react";
+import Layout from "../layouts/Layout.astro";
+
+// Import data
+const portfolioData = await import("../data/portfolio.json");
+
+const { name, title, description, experience, projects, social } =
+    portfolioData.default;
+---
+
+<Layout>
+    {/* Work Experience */}
+    <section id="work" class="mb-16">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Work</h2>
+        <div class="space-y-8">
+            {
+                experience.map((exp, index) => (
+                    <div key={index} class="">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <div>
+                                <h3 class="text-2xl font-bold">
+                                    {exp.position}
+                                </h3>
+                                <p class="text-lg font-bold">
+                                    <a href={exp.url} class="link-highlight">
+                                        {exp.company}
+                                    </a>
+                                </p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0 opacity-60">
+                                {exp.period}
+                            </span>
+                        </div>
+                        <p class="">{exp.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    {/* Projects */}
+    <section id="projects" class="mb-16">
+        <h2 class="text-5xl font-bold mb-8 text-primary">Projects</h2>
+        <div class="space-y-8">
+            {
+                projects.map((project, index) => (
+                    <div key={index} class="">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold">
+                                    {project.name}
+                                </h3>
+                                {project.url ? (
+                                    <a
+                                        href={project.url}
+                                        class="link-highlight text-lg font-bold"
+                                    >
+                                        Github
+                                    </a>
+                                ) : (
+                                    ""
+                                )}
+                            </div>
+                        </div>
+                        <p class="">{project.description}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+</Layout>
