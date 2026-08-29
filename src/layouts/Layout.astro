@@ -5,6 +5,7 @@ const portfolioData = await import("../data/portfolio.json");
 
 const {
     name,
+    title_name
     title,
     description,
     experience,
@@ -20,7 +21,7 @@ const {
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{name} - Portfolio</title>
+        <title>{title_name} - Portfolio</title>
         <meta name="description" content={description} />
         <link rel="stylesheet" href="/css/main.css" /></head
     >

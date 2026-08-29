@@ -1,5 +1,6 @@
 {
   "name": "wyatt",
+  "title_name": "Wyatt",
   "title": "Software Developer",
   "description": "<p>I'm a software developer based in the Twin Cities area with a background spanning full-stack development, cloud infrastructure, and distributed systems. </p><p>My educational background is primarily in high-performance data infastructure, including some database research at the University of Minnesota.</p><p>Professionally, I got my start building internal business applications from the ground up. Most recently, my focus has been around cultivating an integrated engineering application ecosystem, streamlining operations and saving time for both designers and management.</p><p>Outside of work, I still like digging into low-level performance work on data systems for fun, most recently following the LSM implementation found at <a href='https://github.com/skyzh/mini-lsm' class='text-primary link-highlight'>Mini-LSM<a/>.",
   "experience": [
@@ -8,7 +9,7 @@
       "url": "https://forceamerica.com",
       "position": "Software Developer",
       "period": "September 2024 – Present",
-      "description": "Full-stack role centered on modernizing and consolidating internal systems that had grown fragmented over time — retiring aging, one-off tools in favor of integrated, scalable solutions. My focus has increasingly shifted from individual builds to system-level thinking: owning architecture and integration decisions for larger initiatives, with an eye toward building things that hold up as the business scales rather than need replacing again in a few years."
+      "description": "Full-stack role centered on modernizing and consolidating internal systems that had grown fragmented over time — retiring aging, one-off tools in favor of integrated, scalable solutions. Over time, I have shifted towards focusing on system-level thinking: owning architecture and integration decisions for larger initiatives, with an eye toward building things that hold up as the business scales rather than need replacing again in a few years."
     },
     {
       "company": "IDeaS Revenue Solutions",
