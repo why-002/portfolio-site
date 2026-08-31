@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import headshot from "../img/headshot.webp";
 
 // Import data
 const portfolioData = await import("../data/portfolio.json");
@@ -16,6 +18,13 @@ const {
 } = portfolioData.default;
 ---
 
+<link
+    rel="preload"
+    href={headshot.src}
+    slot="afterhead"
+    as="image"
+    type="image/webp"
+/>
 <Layout>
     {/* Hero Section */}
     <section class="mb-20">
@@ -27,9 +36,10 @@ const {
                 <div set:html={description} class="text-xl mb-6 [&_p]:mb-8" />
             </div>
             <div class="md:w-1/2 md:flex justify-end hidden items-start h-full">
-                <img
+                <Image
+                    src={headshot}
+                    alt="Wyatt's Headshot"
                     class="border-2 border-primary rounded-full h-64 w-64 m-0"
-                    src="/img/headshot.webp"
                 />
             </div>
         </div>

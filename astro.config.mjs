@@ -1,15 +1,20 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
+import tailwindcss from "@tailwindcss/vite";
+
+import playformCompress from '@playform/compress';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
-  integrations: [
-    react()
-  ],
+  site: 'https://wyattr.dev',
+
   vite: {
     css: {
-      devSourcemap: true
-    }
-  }
+      devSourcemap: true,
+      lightningcss: true
+    },
+
+    plugins: [tailwindcss()]
+  },
+
+  integrations: [playformCompress()]
 });
